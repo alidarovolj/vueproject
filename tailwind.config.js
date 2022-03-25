@@ -8,6 +8,9 @@ module.exports = {
       colors: {
         'mapIcon': '#40baf7',
         'secondBG': '#f7f7f7',
+        'or': '#ffdcbc',
+        'mainCol': '#fc6b3f',
+        'grayText': '#737171'
       }
     },
   },
