@@ -1,8 +1,8 @@
 <template>
     <div class="block">
         <div class="container mx-auto">
-            <div class="topbar">
-                <i class="fas fa-map-marker-alt"></i>
+            <div class="topbar bg-secondBG">
+                <i class="fas fa-map-marker-alt text-mapIcon"></i>
                 <select name="" id="">
                     <option value="">Алматы</option>
                     <option value="">Астана</option>
