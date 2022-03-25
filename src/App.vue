@@ -1,5 +1,15 @@
 <template>
   <div id="app">
-    <router-view/>
+    <navbar />
+    <router-view />
   </div>
 </template>
+
+<script>
+import navbar from './components/NavbarComp.vue'
+export default {
+  components: {
+    navbar
+  }
+}
+</script>
