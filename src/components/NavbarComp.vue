@@ -2,7 +2,8 @@
     <div class="block">
         <div class="container mx-auto">
             <div class="topbar">
-                <select class="bg-black" name="" id="">
+                <i class="fas fa-map-marker-alt"></i>
+                <select name="" id="">
                     <option value="">Алматы</option>
                     <option value="">Астана</option>
                     <option value="">Павлодар</option>
