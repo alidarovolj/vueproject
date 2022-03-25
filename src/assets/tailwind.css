@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    transition: all 0.3s;
+}
+
 select:active, select:focus{
     border: none;
 }
@@ -11,4 +15,13 @@ select:active, select:focus{
     right: 15px;
     top: 50%;
     transform: translateY(-70%);
+}
+
+.phone {
+    width: 15.5%;
+}
+
+.phone:hover {
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.28); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.28);
 }
