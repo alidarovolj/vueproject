@@ -7,7 +7,18 @@
 		url('MuseoSansCyrl-500.eot?#iefix') format('embedded-opentype'),
 		url('MuseoSansCyrl-500.woff') format('woff'),
 		url('MuseoSansCyrl-500.ttf') format('truetype');
-	font-weight: normal;
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Museo Sans Cyrl';
+	src: url('MuseoSansCyrl-400.eot');
+	src: local('MuseoSansCyrl-400'),
+		url('MuseoSansCyrl-400.eot?#iefix') format('embedded-opentype'),
+		url('MuseoSansCyrl-400.woff') format('woff'),
+		url('MuseoSansCyrl-400.ttf') format('truetype');
+	font-weight: 400;
 	font-style: normal;
 }
 

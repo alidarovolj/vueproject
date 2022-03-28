@@ -30,7 +30,7 @@
           <i class="fas fa-list-ul mr-3"></i>
           <p class="uppercase text-sm font-semibold">Каталог</p>
         </div>
-        <div class="relative w-1/3">
+        <div class="relative w-2/5">
           <input
             type="text"
             class="w-full bg-white text-gray-300 border border-mainCol rounded-lg p-2"
