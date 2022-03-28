@@ -2,7 +2,7 @@
   <div class="block">
     <div class="bg-secondBG">
       <div class="container mx-auto">
-        <div class="topbar flex items-center justify-between pt-4 pb-2">
+        <div class="topbar flex items-center justify-between py-4">
           <div class="bg-white w-max p-2 rounded-md">
             <i class="fas fa-map-marker-alt text-mapIcon"></i>
             <select class="bg-white" name="" id="">

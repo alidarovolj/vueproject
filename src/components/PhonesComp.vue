@@ -8,9 +8,9 @@
           v-for="phone of allPhones"
           :key="phone.id"
         >
-          <img :src="phone.images[0].first" alt="" />
-          <h3 class="font-semibold">{{ phone.name }}</h3>
-          <p class="text-2xl font-bold">{{ phone.price }} тенге</p>
+          <img class="my-2 mb-4" :src="phone.images[0].first" alt="" />
+          <h3 class="font-medium">{{ phone.name }}</h3>
+          <p class="text-2xl font-medium">{{ phone.price }} тг.</p>
         </div>
       </div>
     </div>
