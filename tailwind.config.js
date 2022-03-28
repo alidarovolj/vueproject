@@ -11,6 +11,10 @@ module.exports = {
         'or': '#ffdcbc',
         'mainCol': '#fc6b3f',
         'grayText': '#737171'
+      },
+      width: {
+        '79': '79%',
+        '19': '19%'
       }
     },
   },
