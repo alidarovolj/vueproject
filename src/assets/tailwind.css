@@ -28,6 +28,10 @@ select:active, select:focus{
     width: 15.5%;
 }
 
+.singleBlock {
+    width: 15.5%;
+}
+
 .phone:hover {
     -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.28); 
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.28);
