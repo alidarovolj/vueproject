@@ -191,36 +191,17 @@
               aria-label="Slide 10"
             ></button>
           </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="../assets/1.webp" class="d-block w-100" alt="..." />
-            </div>
-            <div class="carousel-item">
-              <img src="../assets/2.webp" class="d-block w-100" alt="..." />
-            </div>
-            <div class="carousel-item">
-              <img src="../assets/3.webp" class="d-block w-100" alt="..." />
-            </div>
-            <div class="carousel-item">
-              <img src="../assets/4.webp" class="d-block w-100" alt="..." />
-            </div>
-            <div class="carousel-item">
-              <img src="../assets/5.webp" class="d-block w-100" alt="..." />
-            </div>
-            <div class="carousel-item">
-              <img src="../assets/6.webp" class="d-block w-100" alt="..." />
-            </div>
-            <div class="carousel-item">
-              <img src="../assets/7.webp" class="d-block w-100" alt="..." />
-            </div>
-            <div class="carousel-item">
-              <img src="../assets/8.webp" class="d-block w-100" alt="..." />
-            </div>
-            <div class="carousel-item">
-              <img src="../assets/9.webp" class="d-block w-100" alt="..." />
-            </div>
-            <div class="carousel-item">
-              <img src="../assets/10.webp" class="d-block w-100" alt="..." />
+          <div class="carousel-inner h-full bg-white rounded-lg p-4">
+            <h2 class="text-2xl font-black mb-4 text-center">Товар дня</h2>
+            <div
+              v-for="(product, index) of allPhones"
+              :key="product.id"
+              class="carousel-item act-set min-h-full "
+              :class="{ active: index === 0 }"
+            >
+              <img class="my-2 mb-4" :src="product.images[0].first" alt="" />
+              <h3 class="font-medium">{{ product.name }}</h3>
+              <p class="text-2xl font-medium">{{ product.price }} тг.</p>
             </div>
           </div>
           <button
@@ -248,9 +229,17 @@
 </template>
 
 <script>
+import $ from "jquery";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { mapGetters } from "vuex";
 export default {
   name: "SlidersComp",
+  computed: mapGetters(["allPhones"]),
+  mounted() {
+    $(document).ready(function () {
+      $(".carousel-inner .act-set").addClass("active");
+    });
+  },
 };
 </script>
