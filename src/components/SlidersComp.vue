@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="my-4">
     <div class="container mx-auto">
       <div
         id="carouselExampleIndicators"

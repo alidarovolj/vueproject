@@ -21,39 +21,41 @@
         </div>
       </div>
     </div>
-    <div class="container mx-auto py-2">
-      <div class="flex items-center justify-between">
-        <h1 class="text-3xl">LOGO</h1>
-        <div
-          class="flex items-center bg-mainCol text-white py-2 px-4 rounded-md"
-        >
-          <i class="fas fa-list-ul mr-3"></i>
-          <p class="uppercase text-sm font-semibold">Каталог</p>
-        </div>
-        <div class="relative w-2/5">
-          <input
-            type="text"
-            class="w-full bg-white text-gray-300 border border-mainCol rounded-lg p-2"
-            placeholder="Я хочу найти"
-          />
-          <i class="fas fa-search search-but"></i>
-        </div>
-        <div class="flex">
-          <div class="text-center mx-3">
-            <i class="fas fa-heart"></i>
-            <p class="text-grayText">Избранное</p>
+    <div class="bg-white">
+      <div class="container mx-auto py-2">
+        <div class="flex items-center justify-between">
+          <h1 class="text-3xl">LOGO</h1>
+          <div
+            class="flex items-center bg-mainCol text-white py-2 px-4 rounded-md"
+          >
+            <i class="fas fa-list-ul mr-3"></i>
+            <p class="uppercase text-sm font-semibold">Каталог</p>
           </div>
-          <div class="text-center mx-3">
-            <i class="fas fa-balance-scale-left"></i>
-            <p class="text-grayText">Сравнить</p>
+          <div class="relative w-2/5">
+            <input
+              type="text"
+              class="w-full bg-white text-gray-300 border border-mainCol rounded-lg p-2"
+              placeholder="Я хочу найти"
+            />
+            <i class="fas fa-search search-but"></i>
           </div>
-          <div class="text-center mx-3">
-            <i class="fas fa-shopping-cart"></i>
-            <p class="text-grayText">Корзина</p>
-          </div>
-          <div class="text-center mx-3">
-            <i class="fas fa-user"></i>
-            <p class="text-grayText">Вход</p>
+          <div class="flex">
+            <div class="text-center mx-3">
+              <i class="fas fa-heart"></i>
+              <p class="text-grayText">Избранное</p>
+            </div>
+            <div class="text-center mx-3">
+              <i class="fas fa-balance-scale-left"></i>
+              <p class="text-grayText">Сравнить</p>
+            </div>
+            <div class="text-center mx-3">
+              <i class="fas fa-shopping-cart"></i>
+              <p class="text-grayText">Корзина</p>
+            </div>
+            <div class="text-center mx-3">
+              <i class="fas fa-user"></i>
+              <p class="text-grayText">Вход</p>
+            </div>
           </div>
         </div>
       </div>
