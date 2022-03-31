@@ -129,66 +129,13 @@
         >
           <div class="carousel-indicators">
             <button
+              v-for="(indi, index) of allPhones" :key="indi.id"
               type="button"
               data-bs-target="#carouselExampleIndicators1"
-              data-bs-slide-to="0"
-              class="active"
+              :data-bs-slide-to="index"
+              :class="{ active: index === 0 }"
               aria-current="true"
               aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators1"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators1"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators1"
-              data-bs-slide-to="3"
-              aria-label="Slide 4"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators1"
-              data-bs-slide-to="4"
-              aria-label="Slide 5"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators1"
-              data-bs-slide-to="5"
-              aria-label="Slide 6"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators1"
-              data-bs-slide-to="6"
-              aria-label="Slide 7"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators1"
-              data-bs-slide-to="7"
-              aria-label="Slide 8"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators1"
-              data-bs-slide-to="8"
-              aria-label="Slide 9"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators1"
-              data-bs-slide-to="9"
-              aria-label="Slide 10"
             ></button>
           </div>
           <div class="carousel-inner h-full bg-white rounded-lg p-4">

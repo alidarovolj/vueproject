@@ -4,6 +4,12 @@
       <h2 class="text-2xl font-black mb-5">Смартфоны</h2>
       <div class="flex flex-wrap items-start justify-between">
         <div
+          @click="$router.push({ 
+            name: 'single', 
+            params: { 
+              id: phone.id 
+              } 
+            })"
           class="bg-white rounded-lg p-2 phone mx-1 my-2"
           v-for="phone of allPhones"
           :key="phone.id"
