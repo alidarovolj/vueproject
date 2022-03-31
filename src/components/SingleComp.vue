@@ -7,11 +7,13 @@
                     <p class="text-xs text-grayText">Артикул: {{ allPhones[curID].article }}</p>
                     <div class="flex items-start justify-between mt-5">
                         <div class="w-1/2">
-                            <img :src="allPhones[curID].images[0].first" alt="">
+                            <div v-for="(fimages, index) of allPhones[curID].images[0]" :key="fimages">
+                                <img v-if="setImg == index" :src="fimages" alt="">
+                            </div>
                             <div class="flex justify-center items-center">
-                                <img class="w-12 h-12" :src="allPhones[curID].images[0].first" alt="">
-                                <img class="w-12 h-12" :src="allPhones[curID].images[0].second" alt="">
-                                <img class="w-12 h-12" :src="allPhones[curID].images[0].third" alt="">
+                                <div v-for="(simages, index) of allPhones[curID].images[0]" :key="simages">
+                                    <img @click="setImg = index" class="w-12 h-12" :src="simages" alt="">
+                                </div>
                             </div>
                         </div>
                         <div class="w-1/2">
@@ -51,7 +53,8 @@ export default {
     name: "SingleComp",
     data() {
         return {
-            curID: this.$route.params.id - 1
+            curID: this.$route.params.id - 1,
+            setImg: 'first'
         }
     },
     computed: mapGetters(['allPhones']),

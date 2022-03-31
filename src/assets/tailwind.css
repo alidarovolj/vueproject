@@ -90,6 +90,12 @@ select:active, select:focus{
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.28);
 }
 
+.discount {
+    position: absolute;
+    left: 3%;
+    top: 3%;
+}
+
 @media (min-width: 1536px) {
     .container {
         max-width: 1232px;
