@@ -32,6 +32,33 @@ select:active, select:focus{
     width: 15.5%;
 }
 
+.carousel-indicators {
+    background: rgba(0,0,0,.5);
+    width: fit-content;
+    margin: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+    border-radius: 10px;
+    padding: 2px;
+}
+
+.carousel-indicators button {
+    width: 4px !important;
+    height: 4px !important;
+    border-radius: 100%;
+    margin-left: 2px !important;
+    margin-right: 2px !important;
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+.carousel-indicators button.active {
+    width: 10px !important;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px rgb(0 0 0 / 90%);
+}
+
 .phone:hover {
     -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.28); 
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.28);
