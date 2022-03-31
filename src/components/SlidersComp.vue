@@ -109,7 +109,7 @@
             data-bs-target="#carouselExampleIndicators"
             data-bs-slide="prev"
           >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <i class="fas fa-chevron-left text-black text-xs"></i>
             <span class="visually-hidden">Previous</span>
           </button>
           <button
@@ -118,7 +118,7 @@
             data-bs-target="#carouselExampleIndicators"
             data-bs-slide="next"
           >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <i class="fas fa-chevron-right text-black text-xs"></i>
             <span class="visually-hidden">Next</span>
           </button>
         </div>
@@ -210,7 +210,7 @@
             data-bs-target="#carouselExampleIndicators1"
             data-bs-slide="prev"
           >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <i class="fas fa-chevron-left text-black text-xs"></i>
             <span class="visually-hidden">Previous</span>
           </button>
           <button
@@ -219,7 +219,7 @@
             data-bs-target="#carouselExampleIndicators1"
             data-bs-slide="next"
           >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <i class="fas fa-chevron-right text-black text-xs"></i>
             <span class="visually-hidden">Next</span>
           </button>
         </div>

@@ -59,6 +59,32 @@ select:active, select:focus{
     box-shadow: 1px 1px 2px rgb(0 0 0 / 90%);
 }
 
+.carousel-control-prev, 
+.carousel-control-next {
+    height: fit-content;
+    width: fit-content;
+    color: #000;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    padding: 0.8rem;
+    border-radius: 100%;
+    opacity: 0;
+}
+
+.carousel:hover .carousel-control-next,
+.carousel:hover .carousel-control-prev {
+    opacity: 1;
+}
+
+.carousel-control-prev {
+    left: 1rem;
+}
+
+.carousel-control-next {
+    right: 1rem;
+}
+
 .phone:hover {
     -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.28); 
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.28);
