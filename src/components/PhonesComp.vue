@@ -11,7 +11,7 @@
         >
           <p
             v-if="phone.discount != null"
-            class="discount p-1 w-max bg-green-600 rounded-md text-white text-xs"
+            class="discount p-1 w-max bg-discount rounded-md text-white text-xs"
           >
             -{{ phone.discount }}%
           </p>

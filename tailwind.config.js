@@ -6,11 +6,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'mapIcon': '#40baf7',
+        'mapIcon': '#42bbf8',
         'secondBG': '#f7f7f7',
         'or': '#ffdcbc',
         'mainCol': '#fc6b3f',
-        'grayText': '#737171'
+        'grayText': '#737171',
+        'discount': 'rgb(115, 190, 111)',
+        'credit': 'rgb(244, 128, 18)',
+        'orangelight': '#fdf8e2'
       },
       width: {
         '79': '79%',
