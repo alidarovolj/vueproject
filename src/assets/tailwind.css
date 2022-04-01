@@ -96,6 +96,13 @@ select:active, select:focus{
     top: 3%;
 }
 
+.review {
+    box-shadow: 0 1px 8px rgb(0 0 0 / 10%);
+    padding: 16px;
+    margin: 24px 0;
+    border-radius: 8px;
+}
+
 @media (min-width: 1536px) {
     .container {
         max-width: 1232px;

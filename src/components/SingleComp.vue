@@ -40,7 +40,32 @@
                         </div>
                     </div>
                     <div class="bg-white p-6 rounded-lg my-5">
-                        dnasjkldsanklad
+                        <div class="flex items-center mb-4">
+                            <button @click="actBut = 1" class="font-semibold py-3 px-4 rounded-md border mr-4" :class="{ 'border-mainCol' : actBut === 1 }">О товаре</button>
+                            <button @click="actBut = 2" class="font-semibold py-3 px-4 rounded-md border" :class="{ 'border-mainCol' : actBut === 2 }">Отзывы</button>
+                        </div>
+                        <iframe v-if="actBut === 1" class="w-full h-screen" :src="allPhones[curID].website"></iframe>
+                        <div v-if="actBut === 2">
+                            <div class="block">
+                                <div class="review" v-for="review of allPhones[curID].review" :key="review">
+                                    <div class="flex items-start justify-between mb-3">
+                                        <div>
+                                            <p>{{ review.name }}</p>
+                                            <p class="bg-yellow-300 p-1 text-black rounded-md w-max my-3">{{ review.stars }}.0</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-grayText">{{ review.date }}</p>
+                                            <div class="flex items-center justify-between my-3">
+                                                <p class="text-green-400 text-xs"><i class="fa-solid fa-thumbs-up mr-2"></i>{{ review.likes }}</p>
+                                                <p class="text-red-400 text-xs ml-4"><i class="fa-solid fa-thumbs-down mr-2"></i>{{ review.dislikes }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="flex items-center"><i class="fa-solid fa-message text-mapIcon opacity-50 mr-3"></i> Отзыв</p>
+                                    <p class="text-grayText font-normal mt-2">{{ review.text }}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="block bg-white p-6 rounded-lg w-1/4 sticky top-5">
@@ -71,7 +96,8 @@ export default {
     data() {
         return {
             curID: this.$route.params.id - 1,
-            setImg: 'first'
+            setImg: 'first',
+            actBut: 2
         }
     },
     computed: mapGetters(['allPhones']),

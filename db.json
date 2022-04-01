@@ -14,7 +14,26 @@
         "resolution": "828x1792",
         "ram": "4",
         "memory": "128",
-        "price": "404990"
+        "price": "404990",
+        "website": "https://www.apple.com/iphone-11/specs/",
+        "review": [
+            {
+                "name": "Наталья",
+                "date": "02.08.2021",
+                "text": "работает без нареканий",
+                "stars": 5,
+                "likes": 0,
+                "dislikes": 0
+            },
+            {
+                "name": "Aigerim",
+                "date": "16.07.2021",
+                "text": "Все отлично, спасибо, технодом",
+                "stars": 5,
+                "likes": 0,
+                "dislikes": 0
+            }
+        ]
     }, {
         "id": 2,
         "name": "Смартфон Apple iPhone SE 2022 128GB Midnight",
