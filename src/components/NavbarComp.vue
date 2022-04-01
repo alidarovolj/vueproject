@@ -24,7 +24,7 @@
     <div class="bg-white">
       <div class="container mx-auto py-2">
         <div class="flex items-center justify-between">
-          <h1 class="text-3xl">LOGO</h1>
+          <router-link to="/"><h1 class="text-3xl">LOGO</h1></router-link>
           <div
             class="flex items-center bg-mainCol text-white py-2 px-4 rounded-md"
           >
@@ -48,9 +48,18 @@
               <i class="fas fa-balance-scale-left"></i>
               <p class="text-grayText">Сравнить</p>
             </div>
-            <div class="text-center mx-3">
+            <div class="text-center mx-3 relative">
               <i class="fas fa-shopping-cart"></i>
-              <p class="text-grayText">Корзина</p>
+              <p @click="shoFunc()" class="text-grayText">Корзина</p>
+              <div v-if="showCart === 1" class="h-auto bg-white rounded-lg cart">
+                <div class="p-4" v-for="products of addedProducts" :key="products">
+                  <div class="flex items-center justify-between">
+                    <img class="w-12 h-12" :src="products.images[0].first" alt="">
+                    <p class="mx-3 text-xs">{{ products.name }}</p>
+                    <p class="font-bold">{{ products.price }}</p>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="text-center mx-3">
               <i class="fas fa-user"></i>
@@ -64,7 +73,23 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: "NavbarComp",
+  computed: mapGetters(['addedProducts']),
+  data() {
+    return {
+      showCart: 0
+    }
+  },
+  methods: {
+    shoFunc() {
+      if(this.showCart === 0) {
+        this.showCart = 1
+      } else {
+        this.showCart = 0
+      }
+    }
+  }
 };
 </script>

@@ -12,6 +12,16 @@ body {
     background: #f7f7f7;
 }
 
+.cart {
+    position: absolute;
+    right: 0;
+    top: 110%;
+    z-index: 100;
+    width: 400px;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.28); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.28);
+}
+
 
 select:active, select:focus{
     border: none;

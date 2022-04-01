@@ -79,7 +79,7 @@
                         -{{ allPhones[curID].discount }}%
                     </p>
                     <div class="flex justify-between items-center mt-3">
-                        <p class="bg-mapIcon text-white py-2 px-3 mr-2 rounded-lg text-sm w-full">ДОБАВИТЬ В КОРЗИНУ</p>
+                        <p @click="sendData()" class="bg-mapIcon text-center hover:cursor-pointer text-white py-2 px-3 mr-2 rounded-lg text-sm w-full">ДОБАВИТЬ В КОРЗИНУ</p>
                         <p class="bg-orangelight p-2 w-max rounded-lg"><i style="color: #8e979f" class="fa-solid fa-heart"></i></p>
                     </div>
                 </div>
@@ -100,8 +100,13 @@ export default {
             actBut: 2
         }
     },
-    computed: mapGetters(['allPhones']),
-    methods: mapActions(['fetchPhones']),
+    computed: mapGetters(['allPhones', 'addedProducts']),
+    methods: {
+        ...mapActions(['fetchPhones', 'addProduct']),
+        async sendData() {
+            this.addProduct(this.curID);
+        }
+    },
     async mounted() {
         this.fetchPhones();
     }
