@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import SingleComp from '../components/SingleComp.vue'
+import CartComp from '../components/CartComp.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/product/:id',
     name: 'single',
     component: SingleComp
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: CartComp
   }
 ]
 

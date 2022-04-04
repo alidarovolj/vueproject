@@ -76,7 +76,7 @@
                 </div>
                 <p class="text-right">Итого: {{ sumOfProducts }}</p>
                 <div class="flex justify-between items-center">
-                  <router-link class="hover:cursor-pointer hover:text-blue-400" to="/">Открыть корзину</router-link>
+                  <router-link class="hover:cursor-pointer hover:text-blue-400" to="/cart">Открыть корзину</router-link>
                   <p @click="removeAll()" class="hover:cursor-pointer hover:text-blue-400">Очистить корзину</p>
                 </div>
               </div>
