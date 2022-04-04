@@ -56,7 +56,7 @@
                   <div class="flex items-center justify-between">
                     <img class="w-12 h-12" :src="products.images[0].first" alt="">
                     <p class="mx-3 text-xs">{{ products.name }}</p>
-                    <p class="font-bold">{{ products.price }}</p>
+                    <p class="font-bold">{{ products.price }}т.</p>
                   </div>
                 </div>
               </div>
