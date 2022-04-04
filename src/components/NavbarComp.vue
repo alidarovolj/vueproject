@@ -48,13 +48,25 @@
               <i class="fas fa-balance-scale-left"></i>
               <p class="text-grayText">Сравнить</p>
             </div>
-            <div class="text-center mx-3 relative">
+            <div @click="shoFunc()" class="text-center mx-3 relative">
+              <p class="counter">{{ showCounter }}</p>
               <i class="fas fa-shopping-cart"></i>
-              <p @click="shoFunc()" class="text-grayText">Корзина</p>
-              <div v-if="showCart === 1" class="h-auto bg-white rounded-lg cart">
-                <div class="p-4" v-for="products of addedProducts" :key="products">
+              <p class="text-grayText">Корзина</p>
+              <div
+                v-if="showCart === 1"
+                class="h-auto bg-white rounded-lg cart"
+              >
+                <div
+                  class="p-4"
+                  v-for="products of addedProducts"
+                  :key="products"
+                >
                   <div class="flex items-center justify-between">
-                    <img class="w-12 h-12" :src="products.images[0].first" alt="">
+                    <img
+                      class="w-12 h-12"
+                      :src="products.images[0].first"
+                      alt=""
+                    />
                     <p class="mx-3 text-xs">{{ products.name }}</p>
                     <p class="font-bold">{{ products.price }}т.</p>
                   </div>
@@ -73,23 +85,24 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from "vuex";
 export default {
   name: "NavbarComp",
-  computed: mapGetters(['addedProducts']),
+  computed: mapGetters(["addedProducts", "showCounter"]),
   data() {
     return {
-      showCart: 0
-    }
+      showCart: 0,
+      counter: 0
+    };
   },
   methods: {
     shoFunc() {
-      if(this.showCart === 0) {
-        this.showCart = 1
+      if (this.showCart === 0) {
+        this.showCart = 1;
       } else {
-        this.showCart = 0
+        this.showCart = 0;
       }
-    }
-  }
+    },
+  },
 };
 </script>

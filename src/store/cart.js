@@ -6,19 +6,27 @@ export default {
             const newProduct = res.data;
             const productID = newProduct[id]
             commit('setState', productID);
+            commit('setCounter');
         }
     },
     mutations: {
         setState(state, productID) {
             state.cart.push(productID)
+        },
+        setCounter(state) {
+            state.counter += 1
         }
     },
     state: {
-        cart: []
+        cart: [],
+        counter: 0,
     },
     getters: {
         addedProducts(state) {
             return state.cart
+        },
+        showCounter(state) {
+            return state.counter
         }
     }
 }

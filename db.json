@@ -16,8 +16,7 @@
         "memory": "128",
         "price": "404990",
         "website": "https://www.apple.com/iphone-11/specs/",
-        "review": [
-            {
+        "review": [{
                 "name": "Наталья",
                 "date": "02.08.2021",
                 "text": "работает без нареканий",
