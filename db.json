@@ -14,7 +14,7 @@
         "resolution": "828x1792",
         "ram": "4",
         "memory": "128",
-        "price": "404990",
+        "price": 404990,
         "website": "https://www.apple.com/iphone-11/specs/",
         "review": [{
                 "name": "Наталья",
@@ -50,6 +50,6 @@
         "resolution": "750x1334",
         "ram": "4",
         "memory": "128",
-        "price": "339990"
+        "price": 339990
     }]
 }

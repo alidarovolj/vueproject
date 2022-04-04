@@ -48,18 +48,20 @@
               <i class="fas fa-balance-scale-left"></i>
               <p class="text-grayText">Сравнить</p>
             </div>
-            <div @click="shoFunc()" class="text-center mx-3 relative">
-              <p class="counter">{{ showCounter }}</p>
-              <i class="fas fa-shopping-cart"></i>
-              <p class="text-grayText">Корзина</p>
+            <div class="text-center mx-3 relative">
+              <div @click="shoFunc()">
+                <p class="counter">{{ showCounter }}</p>
+                <i class="fas fa-shopping-cart"></i>
+                <p class="text-grayText">Корзина</p>
+              </div>
               <div
                 v-if="showCart === 1"
-                class="h-auto bg-white rounded-lg cart"
+                class="h-auto p-4 bg-white rounded-lg cart"
               >
                 <div
-                  class="p-4"
                   v-for="(products, index) of addedProducts"
                   :key="products"
+                  class="mb-3"
                 >
                   <div class="flex items-center justify-between">
                     <img
@@ -71,6 +73,11 @@
                     <p class="font-bold">{{ products.price }}т.</p>
                     <p @click="removeItem(index)" class="ml-3 bg-red-600 px-2 p-1 rounded-md"><i class="fa-solid fa-xmark text-lg text-white"></i></p>
                   </div>
+                </div>
+                <p class="text-right">Итого: {{ sumOfProducts }}</p>
+                <div class="flex justify-between items-center">
+                  <router-link class="hover:cursor-pointer hover:text-blue-400" to="/">Открыть корзину</router-link>
+                  <p @click="removeAll()" class="hover:cursor-pointer hover:text-blue-400">Очистить корзину</p>
                 </div>
               </div>
             </div>
@@ -89,7 +96,7 @@
 import { mapActions, mapGetters } from "vuex";
 export default {
   name: "NavbarComp",
-  computed: mapGetters(["addedProducts", "showCounter"]),
+  computed: mapGetters(["addedProducts", "showCounter", "sumOfProducts"]),
   data() {
     return {
       showCart: 0,
@@ -97,7 +104,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions(['removeByIndex']),
+    ...mapActions(['removeByIndex', 'removeAllCart']),
     shoFunc() {
       if (this.showCart === 0) {
         this.showCart = 1;
@@ -108,6 +115,9 @@ export default {
     removeItem(id) {
       this.removeByIndex(id);
       console.log(id)
+    },
+    removeAll() {
+      this.removeAllCart();
     }
   },
 };
