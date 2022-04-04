@@ -7,6 +7,9 @@ export default {
             const productID = newProduct[id]
             commit('setState', productID);
             commit('setCounter');
+        },
+        removeByIndex({commit}, receivedID) {
+            commit('remFromCart', receivedID)
         }
     },
     mutations: {
@@ -15,6 +18,9 @@ export default {
         },
         setCounter(state) {
             state.counter += 1
+        },
+        remFromCart(state, receivedID) {
+            state.cart.splice(receivedID, 1);
         }
     },
     state: {

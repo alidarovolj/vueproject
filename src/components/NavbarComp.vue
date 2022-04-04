@@ -58,7 +58,7 @@
               >
                 <div
                   class="p-4"
-                  v-for="products of addedProducts"
+                  v-for="(products, index) of addedProducts"
                   :key="products"
                 >
                   <div class="flex items-center justify-between">
@@ -69,6 +69,7 @@
                     />
                     <p class="mx-3 text-xs">{{ products.name }}</p>
                     <p class="font-bold">{{ products.price }}т.</p>
+                    <p @click="removeItem(index)" class="ml-3 bg-red-600 px-2 p-1 rounded-md"><i class="fa-solid fa-xmark text-lg text-white"></i></p>
                   </div>
                 </div>
               </div>
@@ -85,7 +86,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 export default {
   name: "NavbarComp",
   computed: mapGetters(["addedProducts", "showCounter"]),
@@ -96,6 +97,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions(['removeByIndex']),
     shoFunc() {
       if (this.showCart === 0) {
         this.showCart = 1;
@@ -103,6 +105,10 @@ export default {
         this.showCart = 0;
       }
     },
+    removeItem(id) {
+      this.removeByIndex(id);
+      console.log(id)
+    }
   },
 };
 </script>
