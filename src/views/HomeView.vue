@@ -17,5 +17,10 @@ export default {
     sliders,
     popular
   },
+  metaInfo() {
+      return {
+        title: "Главная страница",
+      }
+  },
 };
 </script>

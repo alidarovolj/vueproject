@@ -200,5 +200,10 @@ export default {
   async mounted() {
     this.fetchPhones();
   },
+  metaInfo() {
+      return {
+        title: this.allPhones[this.curID].name,
+      }
+  },
 };
 </script>
