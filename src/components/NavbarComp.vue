@@ -82,8 +82,17 @@
               </div>
             </div>
             <div class="text-center mx-3 text-grayText hover:text-mainCol hover:cursor-pointer" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <i class="fas fa-user"></i>
-              <p>Вход</p>
+              <div v-if="currentUser != null" class="block">
+                <div class="flex items-center justify-between">
+                  <i class="fas fa-user"></i>
+                  <p>{{ currentUser.name }}</p>
+                </div>
+                <p>Бонусы: {{ currentUser.bonuses }}</p>
+              </div>
+              <div v-if="currentUser == null">
+                <i class="fas fa-user"></i>
+                <p>Вход</p>
+              </div>
             </div>
           </div>
         </div>
@@ -100,7 +109,7 @@
             <div class="modal-body">
               <form v-if="showForm === 1" action="">
                 <input v-model="form.email" class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="text" placeholder="E-mail">
-                <input v-model="form.password" class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="text" placeholder="Пароль">
+                <input v-model="form.password" class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="password" placeholder="Пароль">
                 <p @click="loginForm()" class="bg-mainCol p-2 w-full rounded-md text-center text-white uppercase">Войти</p>
               </form>
               <form v-if="showForm === 2" action="">

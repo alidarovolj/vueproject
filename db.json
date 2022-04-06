@@ -56,24 +56,36 @@
         {
             "id": 1,
             "phone": "87472367503",
+            "name": "Олжас",
+            "surname": "Алидаров",
+            "bonuses": 100,
             "email": "oljasalidarov@gmail.com",
             "pass": "123"
         },
         {
             "id": 2,
             "phone": "87326712389",
+            "name": "Олжас",
+            "surname": "Алидаров",
+            "bonuses": 50,
             "email": "alidar@gmail.com",
             "pass": "qwerty"
         },
         {
             "id": 3,
             "phone": "87471234678",
+            "name": "Олжас",
+            "surname": "Алидаров",
+            "bonuses": 20,
             "email": "alidarov@gmail.com",
             "pass": "123"
         },
         {
             "id": 4,
             "phone": "87472367503",
+            "name": "Олжас",
+            "surname": "Алидаров",
+            "bonuses": 10000,
             "email": "qwerty@gmail.com",
             "pass": "qwerty"
         }
