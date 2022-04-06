@@ -40,19 +40,19 @@
             <i class="fas fa-search search-but"></i>
           </div>
           <div class="flex">
-            <div class="text-center mx-3">
+            <div class="text-center mx-3 text-grayText hover:text-mainCol hover:cursor-pointer">
               <i class="fas fa-heart"></i>
-              <p class="text-grayText">Избранное</p>
+              <p>Избранное</p>
             </div>
-            <div class="text-center mx-3">
+            <div class="text-center mx-3 text-grayText hover:text-mainCol hover:cursor-pointer">
               <i class="fas fa-balance-scale-left"></i>
-              <p class="text-grayText">Сравнить</p>
+              <p>Сравнить</p>
             </div>
             <div class="text-center mx-3 relative">
-              <div @click="shoFunc()">
+              <div class="hover:text-mainCol hover:cursor-pointer text-grayText" @click="shoFunc()">
                 <p class="counter">{{ showCounter }}</p>
                 <i class="fas fa-shopping-cart"></i>
-                <p class="text-grayText">Корзина</p>
+                <p>Корзина</p>
               </div>
               <div
                 v-if="showCart === 1"
@@ -81,9 +81,27 @@
                 </div>
               </div>
             </div>
-            <div class="text-center mx-3">
+            <div class="text-center mx-3 text-grayText hover:text-mainCol hover:cursor-pointer" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <i class="fas fa-user"></i>
-              <p class="text-grayText">Вход</p>
+              <p>Вход</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header flex justify-between items-center">
+              <button class="border border-gray-400 rounded-lg py-3 w-full mr-2">Вход</button>
+              <button class="border border-gray-400 rounded-lg py-3 w-full ml-2">Регистрация</button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button class="w-full text-center text-sm" type="button" data-bs-dismiss="modal">Закрыть</button>
             </div>
           </div>
         </div>

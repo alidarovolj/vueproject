@@ -30,7 +30,8 @@ export default {
         },
         clearCart(state) {
             state.cart = [],
-            state.counter = 0
+            state.counter = 0,
+            state.price = 0
         }
     },
     state: {
