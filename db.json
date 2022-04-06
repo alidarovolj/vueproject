@@ -58,6 +58,24 @@
             "phone": "87472367503",
             "email": "oljasalidarov@gmail.com",
             "pass": "123"
+        },
+        {
+            "id": 2,
+            "phone": "87326712389",
+            "email": "alidar@gmail.com",
+            "pass": "qwerty"
+        },
+        {
+            "id": 3,
+            "phone": "87471234678",
+            "email": "alidarov@gmail.com",
+            "pass": "123"
+        },
+        {
+            "id": 4,
+            "phone": "87472367503",
+            "email": "qwerty@gmail.com",
+            "pass": "qwerty"
         }
     ]
 }

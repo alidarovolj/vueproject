@@ -94,11 +94,24 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header flex justify-between items-center">
-              <button class="border border-gray-400 rounded-lg py-3 w-full mr-2">Вход</button>
-              <button class="border border-gray-400 rounded-lg py-3 w-full ml-2">Регистрация</button>
+              <button @click="showForm = 1" :class="{ 'border-mainCol' : showForm === 1 }" class="border rounded-lg py-3 w-full mr-2">Вход</button>
+              <button @click="showForm = 2" :class="{ 'border-mainCol' : showForm === 2 }" class="border rounded-lg py-3 w-full ml-2">Регистрация</button>
             </div>
             <div class="modal-body">
-              ...
+              <form v-if="showForm === 1" action="">
+                <input v-model="form.email" class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="text" placeholder="E-mail">
+                <input v-model="form.password" class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="text" placeholder="Пароль">
+                <p @click="loginForm()" class="bg-mainCol p-2 w-full rounded-md text-center text-white uppercase">Войти</p>
+              </form>
+              <form v-if="showForm === 2" action="">
+                <input class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="text" placeholder="Имя">
+                <input class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="text" placeholder="Фамилия">
+                <input class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="email" placeholder="E-mail">
+                <input class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="number" placeholder="Номер телефона">
+                <input class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="password" placeholder="Пароль">
+                <input class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="password" placeholder="Подтвердите пароль">
+                <p class="bg-mainCol p-2 w-full rounded-md text-center text-white uppercase">Регистрация</p>
+              </form>
             </div>
             <div class="modal-footer">
               <button class="w-full text-center text-sm" type="button" data-bs-dismiss="modal">Закрыть</button>
@@ -112,14 +125,28 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
+import axios from 'axios';
+
 export default {
   name: "NavbarComp",
   computed: mapGetters(["addedProducts", "showCounter", "sumOfProducts"]),
   data() {
     return {
       showCart: 0,
-      counter: 0
+      counter: 0,
+      showForm: 1,
+      users: [],
+      currentUser: null,
+      form: {
+        email: "",
+        password: ""
+      }
     };
+  },
+  async mounted() {
+      const res = await axios.get(`http://localhost:3001/users`);
+      this.users = res.data;
+      console.log(this.users);
   },
   methods: {
     ...mapActions(['removeByIndex', 'removeAllCart']),
@@ -136,6 +163,14 @@ export default {
     },
     removeAll() {
       this.removeAllCart();
+    },
+    loginForm() {
+      for(let i = 0; i <= this.users.length; i++) {
+        if(this.users[i].email == this.form.email && this.users[i].pass == this.form.password) {
+          this.currentUser = this.users[i] 
+          console.log("hello user:", this.currentUser.email)
+        }
+      }
     }
   },
 };
