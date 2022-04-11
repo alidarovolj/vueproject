@@ -184,48 +184,72 @@
                 </p>
               </form>
               <form v-if="showForm === 2" action="">
-                <div v-if="isActive === 2" class="bg-red-500 text-white p-3 rounded-lg text-sm">
+                <div
+                  v-if="isActive === 2"
+                  class="bg-red-500 text-white p-3 rounded-lg text-sm"
+                >
                   Неверная регистрация
                 </div>
-                <div v-if="isActive === 1" class="bg-green-500 text-white p-3 rounded-lg text-sm">
+                <div
+                  v-if="isActive === 1"
+                  class="bg-green-500 text-white p-3 rounded-lg text-sm"
+                >
                   Вы успешно зарегистрировались
                 </div>
-                <input
+                <div class="my-4">
+                  <input
                   v-model="register.name"
-                  class="block border border-gray-200 p-2 my-4 w-full rounded-md"
+                  class="block border border-gray-200 p-2 w-full rounded-md"
                   type="text"
                   placeholder="Имя"
                 />
+                <p v-if="register.name === '' && isActive === 2" class="text-red-500 text-xs">Обязательное поле</p>
+                </div>
+                <div class="my-4">
                 <input
                   v-model="register.surname"
-                  class="block border border-gray-200 p-2 my-4 w-full rounded-md"
+                  class="block border border-gray-200 p-2 w-full rounded-md"
                   type="text"
                   placeholder="Фамилия"
                 />
+                <p v-if="register.surname === '' && isActive === 2" class="text-red-500 text-xs">Обязательное поле</p>
+                </div>
+                <div class="my-4">
                 <input
                   v-model="register.email"
-                  class="block border border-gray-200 p-2 my-4 w-full rounded-md"
+                  class="block border border-gray-200 p-2 w-full rounded-md"
                   type="email"
                   placeholder="E-mail"
                 />
+                <p v-if="register.email === '' && isActive === 2" class="text-red-500 text-xs">Обязательное поле</p>
+                </div>
+                <div class="my-4">
                 <input
                   v-model="register.phone"
-                  class="block border border-gray-200 p-2 my-4 w-full rounded-md"
+                  class="block border border-gray-200 p-2 w-full rounded-md"
                   type="number"
                   placeholder="Номер телефона"
                 />
+                <p v-if="register.phone === '' && isActive === 2" class="text-red-500 text-xs">Обязательное поле</p>
+                </div>
+                <div class="my-4">
                 <input
                   v-model="register.pass"
-                  class="block border border-gray-200 p-2 my-4 w-full rounded-md"
+                  class="block border border-gray-200 p-2 w-full rounded-md"
                   type="password"
                   placeholder="Пароль"
                 />
+                <p v-if="register.pass === '' && isActive === 2" class="text-red-500 text-xs">Обязательное поле</p>
+                </div>
+                <div class="my-4">
                 <input
                   v-model="register.confirmPass"
-                  class="block border border-gray-200 p-2 my-4 w-full rounded-md"
+                  class="block border border-gray-200 p-2 w-full rounded-md"
                   type="password"
                   placeholder="Подтвердите пароль"
                 />
+                <p v-if="register.confirmPass === '' && isActive === 2" class="text-red-500 text-xs">Обязательное поле</p>
+                </div>
                 <p
                   @click="addUser()"
                   class="bg-mainCol p-2 w-full rounded-md text-center text-white uppercase"
@@ -326,7 +350,17 @@ export default {
       }
     },
     async addUser() {
-      if (this.register.pass === this.register.confirmPass) {
+      var character = /[@]/
+      if (
+        this.register.pass === this.register.confirmPass &&
+        this.register.name != "" &&
+        this.register.surname != "" &&
+        this.register.email != "" &&
+        this.register.phone != "" &&
+        this.register.pass != "" &&
+        this.register.confirmPass != "" &&
+        character.test(this.register.email)
+      ) {
         this.isActive = 1;
         const res = await axios.post("http://localhost:3001/users", {
           name: this.register.name,

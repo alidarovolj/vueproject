@@ -237,6 +237,24 @@
       "pass": "123",
       "bonuses": 0,
       "id": 7
+    },
+    {
+      "name": "oljas",
+      "surname": "alidarov",
+      "email": "oljasalidarov@gmail.com",
+      "phone": "9378219",
+      "pass": "qwerty",
+      "bonuses": 0,
+      "id": 8
+    },
+    {
+      "name": "qwerty",
+      "surname": "qwerty",
+      "email": "qwerty@",
+      "phone": "123",
+      "pass": "123",
+      "bonuses": 0,
+      "id": 9
     }
   ]
 }
