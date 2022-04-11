@@ -117,13 +117,19 @@
                 <p @click="loginForm()" class="bg-mainCol p-2 w-full rounded-md text-center text-white uppercase">Войти</p>
               </form>
               <form v-if="showForm === 2" action="">
-                <input class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="text" placeholder="Имя">
-                <input class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="text" placeholder="Фамилия">
-                <input class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="email" placeholder="E-mail">
-                <input class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="number" placeholder="Номер телефона">
-                <input class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="password" placeholder="Пароль">
-                <input class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="password" placeholder="Подтвердите пароль">
-                <p class="bg-mainCol p-2 w-full rounded-md text-center text-white uppercase">Регистрация</p>
+              <div class="bg-red-500 text-white p-3 rounded-lg text-sm">
+                Неверная регистрация
+              </div>
+              <div class="bg-green-500 text-white p-3 rounded-lg text-sm">
+                Вы успешно зарегистрировались
+              </div>
+                <input v-model="register.name" class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="text" placeholder="Имя">
+                <input v-model="register.surname" class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="text" placeholder="Фамилия">
+                <input v-model="register.email" class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="email" placeholder="E-mail">
+                <input v-model="register.phone" class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="number" placeholder="Номер телефона">
+                <input v-model="register.pass" class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="password" placeholder="Пароль">
+                <input v-model="register.confirmPass" class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="password" placeholder="Подтвердите пароль">
+                <p @click="addUser()" class="bg-mainCol p-2 w-full rounded-md text-center text-white uppercase">Регистрация</p>
               </form>
             </div>
             <div class="modal-footer">
@@ -153,6 +159,15 @@ export default {
       form: {
         email: "",
         password: ""
+      },
+      register: {
+        name: "",
+        surname: "",
+        email: "",
+        phone: "",
+        pass: "",
+        confirmPass: "",
+        bonuses: 0
       },
       valid_form: {
         email: 0,
@@ -196,6 +211,22 @@ export default {
           this.valid_form.password = 1;
           console.log("no")
         }
+      }
+    },
+    async addUser() {
+      try {
+        const res = await axios.post('http://localhost:3001/users', 
+        { 
+          name: this.register.name,
+          surname: this.register.surname,
+          email: this.register.email,
+          phone: this.register.phone,
+          pass: this.register.pass,
+          bonuses: this.register.bonuses
+        });
+        this.register = [...this.register, res.data];
+      } catch (e) {
+        console.error(e);
       }
     }
   },
