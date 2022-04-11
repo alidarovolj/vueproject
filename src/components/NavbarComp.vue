@@ -81,15 +81,15 @@
                 </div>
               </div>
             </div>
-            <div class="text-center mx-3 text-grayText hover:text-mainCol hover:cursor-pointer" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <div v-if="currentUser != null" class="block">
+            <div class="text-center mx-3 text-grayText hover:text-mainCol hover:cursor-pointer">
+              <div @click="currentUser = null" v-if="currentUser != null" class="block">
                 <div class="flex items-center justify-between">
                   <i class="fas fa-user"></i>
                   <p>{{ currentUser.name }}</p>
                 </div>
                 <p>Бонусы: {{ currentUser.bonuses }}</p>
               </div>
-              <div v-if="currentUser == null">
+              <div data-bs-toggle="modal" data-bs-target="#exampleModal" v-if="currentUser == null">
                 <i class="fas fa-user"></i>
                 <p>Вход</p>
               </div>
@@ -107,6 +107,10 @@
               <button @click="showForm = 2" :class="{ 'border-mainCol' : showForm === 2 }" class="border rounded-lg py-3 w-full ml-2">Регистрация</button>
             </div>
             <div class="modal-body">
+              <div v-if="valid_form.password === 1 || valid_form.email === 1" class="bg-red-400 text-white w-full p-2 rounded-lg">
+                <h2 class="text-lg">Вы ввели неправильный email или пароль</h2>
+                <p>Попробуйте снова</p>
+              </div>
               <form v-if="showForm === 1" action="">
                 <input v-model="form.email" class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="text" placeholder="E-mail">
                 <input v-model="form.password" class="block border border-gray-200 p-2 my-4 w-full rounded-md" type="password" placeholder="Пароль">
@@ -149,6 +153,10 @@ export default {
       form: {
         email: "",
         password: ""
+      },
+      valid_form: {
+        email: 0,
+        password: 0
       }
     };
   },
@@ -176,8 +184,17 @@ export default {
     loginForm() {
       for(let i = 0; i <= this.users.length; i++) {
         if(this.users[i].email == this.form.email && this.users[i].pass == this.form.password) {
-          this.currentUser = this.users[i] 
-          console.log("hello user:", this.currentUser.email)
+          this.currentUser = this.users[i];
+          this.valid_form.email = 0;
+          this.valid_form.password = 0;
+          console.log("yes")
+        } else if(this.currentUser != null) {
+          this.valid_form.email = 0;
+          this.valid_form.password = 0;
+        } else {
+          this.valid_form.email = 1;
+          this.valid_form.password = 1;
+          console.log("no")
         }
       }
     }
