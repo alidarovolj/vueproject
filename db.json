@@ -228,6 +228,15 @@
       "pass": "123",
       "bonuses": 0,
       "id": 6
+    },
+    {
+      "name": "Олжас",
+      "surname": "Алидаров",
+      "email": "oljasalidarov@gmail.com",
+      "phone": "7312893",
+      "pass": "123",
+      "bonuses": 0,
+      "id": 7
     }
   ]
 }
