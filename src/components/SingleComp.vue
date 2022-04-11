@@ -187,7 +187,7 @@ export default {
     return {
       curID: this.$route.params.id - 1,
       setImg: "first",
-      actBut: 2,
+      actBut: 1,
     };
   },
   computed: mapGetters(["allPhones", "addedProducts"]),

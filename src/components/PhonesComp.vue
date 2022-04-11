@@ -9,29 +9,31 @@
           v-for="phone of allPhones"
           :key="phone.id"
         >
-          <p
-            v-if="phone.discount != null"
-            class="discount p-1 w-max bg-discount rounded-md text-white text-xs"
-          >
-            -{{ phone.discount }}%
-          </p>
-          <img class="my-2 mb-4" :src="phone.images[0].first" alt="" />
-          <h3 class="font-medium my-2">{{ phone.name }}</h3>
-          <p
-            v-if="phone.discount != null"
-            class="text-2xl font-semibold text-mainCol"
-          >
-            {{ phone.price - (phone.price * phone.discount) / 100 }} тг.
-          </p>
-          <p
-            v-if="phone.discount != null"
-            class="text-xs font-semibold line-through text-grayText"
-          >
-            {{ phone.price }} тг.
-          </p>
-          <p v-if="phone.discount == null" class="text-2xl font-semibold">
-            {{ phone.price }} тг.
-          </p>
+          <div v-if="phone.category === 'phones'">
+            <p
+              v-if="phone.discount != null"
+              class="discount p-1 w-max bg-discount rounded-md text-white text-xs"
+            >
+              -{{ phone.discount }}%
+            </p>
+            <img class="my-2 mb-4" :src="phone.images[0].first" alt="" />
+            <h3 class="font-medium my-2">{{ phone.name }}</h3>
+            <p
+              v-if="phone.discount != null"
+              class="text-2xl font-semibold text-mainCol"
+            >
+              {{ phone.price - (phone.price * phone.discount) / 100 }} тг.
+            </p>
+            <p
+              v-if="phone.discount != null"
+              class="text-xs font-semibold line-through text-grayText"
+            >
+              {{ phone.price }} тг.
+            </p>
+            <p v-if="phone.discount == null" class="text-2xl font-semibold">
+              {{ phone.price }} тг.
+            </p>
+          </div>
         </div>
       </div>
     </div>

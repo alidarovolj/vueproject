@@ -176,17 +176,11 @@
 </template>
 
 <script>
-import $ from "jquery";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { mapGetters } from "vuex";
 export default {
   name: "SlidersComp",
   computed: mapGetters(["allPhones"]),
-  mounted() {
-    $(document).ready(function () {
-      $(".carousel-inner .act-set").addClass("active");
-    });
-  },
 };
 </script>
