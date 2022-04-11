@@ -24,7 +24,8 @@
     <div class="bg-white">
       <div class="container mx-auto py-2">
         <div class="flex items-center justify-between">
-          <router-link to="/"><h1 class="text-3xl">LOGO</h1></router-link>
+          <router-link v-if="currentUser === null" to="/"><h1 class="text-3xl">LOGO</h1></router-link>
+          <a v-if="currentUser != null" href="https://facebook.com"><h1 class="text-3xl">LOGO</h1></a>
           <div
             class="flex items-center bg-mainCol text-white py-2 px-4 rounded-md"
           >
