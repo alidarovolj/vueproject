@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import SingleComp from '../components/SingleComp.vue'
 import CartComp from '../components/CartComp.vue'
+import CompareComp from '../components/CompareComp.vue'
 
 Vue.use(VueRouter)
 
@@ -21,7 +22,12 @@ const routes = [
     path: '/cart',
     name: 'cart',
     component: CartComp
-  }
+  },
+  {
+    path: '/compare',
+    name: 'compare',
+    component: CompareComp
+  },
 ]
 
 const router = new VueRouter({

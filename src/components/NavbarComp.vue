@@ -50,8 +50,10 @@
             <div
               class="text-center mx-3 text-grayText hover:text-mainCol hover:cursor-pointer"
             >
-              <i class="fas fa-balance-scale-left"></i>
-              <p>Сравнить</p>
+              <router-link :to="{ name: 'compare' }">
+                <i class="fas fa-balance-scale-left"></i>
+                <p>Сравнить</p>
+              </router-link>
             </div>
             <div class="text-center mx-3 relative">
               <div
