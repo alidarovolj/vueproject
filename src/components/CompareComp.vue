@@ -5,7 +5,7 @@
                 <div>
                     Сравниваемые товары
                 </div>
-                <div v-for="item in items" :key="item">
+                <div v-for="item in allFetchedProductsFiltered" :key="item">
                     {{ item }}
                 </div>
                 <button @click="increaseFunc()">Click me!</button>
@@ -15,24 +15,13 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 export default {
     name: "CompareComp",
-    data() {
-        return {
-            items: [],
-            i: 0
-        }
+    methods: mapActions(['addProductsC']),
+    async mounted() {
+        this.addProductsC();
     },
-    methods: {
-        increaseFunc() {
-            this.i += 1;
-            if(this.items.length <= 2) {
-                this.items.splice(0, 0, this.i);
-            } else {
-                this.items.splice(2, 1);
-                this.items.splice(0, 0, this.i);
-            }
-        }
-    }
+    computed: mapGetters(['allFetchedProducts', 'allFetchedProductsFiltered'])
 }
 </script>

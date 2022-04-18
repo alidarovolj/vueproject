@@ -171,6 +171,7 @@
             <p class="bg-orangelight p-2 w-max rounded-lg">
               <i style="color: #8e979f" class="fa-solid fa-heart"></i>
             </p>
+            <p @click="addElements(curID)">Сравнить</p>
           </div>
         </div>
       </div>
@@ -192,7 +193,7 @@ export default {
   },
   computed: mapGetters(["allPhones", "addedProducts"]),
   methods: {
-    ...mapActions(["fetchPhones", "addProduct"]),
+    ...mapActions(["fetchPhones", "addProduct", "addElements"]),
     async sendData() {
       this.addProduct(this.curID);
     },
